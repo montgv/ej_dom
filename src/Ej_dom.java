@@ -37,14 +37,12 @@ public class Ej_dom {
                 //creamos el elemento edad con su contenido
                 CrearElemento("edad", String.valueOf(becario.getEdad()), raiz, document);
                 //creamos el elemento numSuspensos con su contenido
-                CrearElemento("numSuspensos", Integer.toString(becario.getNumSuspensos()), raiz, document);
+                CrearElemento("numSuspensos", String.valueOf(becario.getNumSuspensos()), raiz, document);
                 //creamos el elemento residenciaFamiliar con su contenido
                 CrearElemento("residenciaFamiliar", becario.getResidenciaFamiliar(), raiz, document);
                 //creamos el elemento ingresosAnuales con su contenido
                 CrearElemento("ingresosAnuales", String.valueOf(becario.getIngresosAnuales()), raiz, document);
             }
-            document.normalizeDocument();
-
             Source source = new DOMSource(document);
             Result result = new StreamResult(new java.io.File("Becario.xml"));
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
